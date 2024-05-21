@@ -25,8 +25,8 @@
             <div class="prev" @click="decIndex()"></div>
             <div class="next" @click="incIndex()"></div>
             <!-- Markup statico delle thumbnails -->
-            <div class="thumb" v-for="(img,index) in images">
-                <img :src="img.image" :alt="img.image">
+            <div class="thumb" :class="{active: index === imageIndex}" v-for="(img,index) in images">
+                <img :src="img.image" :alt="img.image" @click="setIndex(index)">
             </div>
         </div>
     </div>

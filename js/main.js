@@ -34,6 +34,7 @@ createApp({
                 }
             ],
             imageIndex: 0,
+            isActive: true,
         }
     },
     methods: {
@@ -50,6 +51,9 @@ createApp({
             } else {
                 this.imageIndex--;
             }
+        },
+        setIndex(value) {
+            this.imageIndex = value;
         }
     }
 }).mount('#app')
@@ -58,22 +62,6 @@ createApp({
 // -----------
 //   EVENTS
 // -----------
-
-// next.addEventListener('click', () => {
-//     if (activeIndex >= images.length - 1) {
-//         activeIndex = 0;
-//     } else {
-//         activeIndex++;
-//     }
-// });
-
-// prev.addEventListener('click', () => {
-//     if (activeIndex <= 0) {
-//         activeIndex = images.length - 1;
-//     } else {
-//         activeIndex--;
-//     }
-// });
 
 // thumbsContainer.addEventListener('click', element => {
 //     console.log(activeIndex - 1);
