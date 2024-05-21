@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 .container {
     width: 900px;
     height: 80vh;
@@ -19,7 +23,6 @@
 
 .item {
     height: 100%;
-    display: none;
     position: relative;
 }
 
@@ -29,9 +32,15 @@
     object-fit: cover;
 }
 
-.item.active {
-    display: block;
+.text-container {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.4);
 }
+
 
 .thumbs {
     height: 300px;
