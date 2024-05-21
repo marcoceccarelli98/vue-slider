@@ -6,6 +6,8 @@
 
 const { createApp } = Vue;
 
+const { useInterval } = Vue;
+
 createApp({
     data() {
         return {
@@ -36,6 +38,16 @@ createApp({
             imageIndex: 0,
             isActive: true,
         }
+    },
+    mounted() {
+        // Set interval when component is mounted
+        this.autoIncIndex = setInterval(() => {
+            this.imageIndex++;
+        }, 3000);
+    },
+    beforeDestroy() {
+        // Clear interval when component is destoyed
+        clearInterval(this.autoIncIndex);
     },
     methods: {
         incIndex() {

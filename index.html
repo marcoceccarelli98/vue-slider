@@ -12,7 +12,7 @@
 <body>
     <div class="container" id="app" v-cloak>
         <div class="items">
-            <!-- Markup statico delle immagini -->
+            <!-- Item -->
             <div class="item" v-for="(img,index) in images" v-show="index===imageIndex">
                 <div class="text-container">
                     <h2>{{img.title}}</h2>
@@ -24,7 +24,7 @@
         <div class="thumbs">
             <div class="prev" @click="decIndex()"></div>
             <div class="next" @click="incIndex()"></div>
-            <!-- Markup statico delle thumbnails -->
+            <!-- Thumb -->
             <div class="thumb" :class="{active: index === imageIndex}" v-for="(img,index) in images">
                 <img :src="img.image" :alt="img.image" @click="setIndex(index)">
             </div>
