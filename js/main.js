@@ -39,15 +39,14 @@ createApp({
     },
     mounted() {
         // Set interval when component is mounted
-        this.autoIncIndex = setInterval(() => {
-            this.imageIndex++;
-        }, 3000);
+        this.hoverPlay();
     },
     beforeDestroy() {
         // Clear interval when component is destoyed
         clearInterval(this.autoIncIndex);
     },
     methods: {
+
         incIndex() {
             if (this.imageIndex >= this.images.length - 1) {
                 this.imageIndex = 0;
@@ -55,6 +54,7 @@ createApp({
                 this.imageIndex++;
             }
         },
+
         decIndex() {
             if (this.imageIndex <= 0) {
                 this.imageIndex = this.images.length - 1;
@@ -62,9 +62,20 @@ createApp({
                 this.imageIndex--;
             }
         },
+
         setIndex(value) {
             this.imageIndex = value;
-        }
+        },
+
+        hoverPlay() {
+            this.autoIncIndex = setInterval(() => {
+                this.incIndex();
+            }, 3000);
+        },
+
+        hoverPause() {
+            clearInterval(this.autoIncIndex);
+        },
     }
 }).mount('#app')
 

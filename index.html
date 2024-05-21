@@ -13,7 +13,8 @@
     <div class="container" id="app" v-cloak>
         <div class="items">
             <!-- Item -->
-            <div class="item" v-for="(img,index) in images" v-show="index===imageIndex">
+            <div class="item" @mouseover="hoverPause()" @mouseleave="hoverPlay()" v-for="(img,index) in images"
+                v-show="index===imageIndex">
                 <div class="text-container">
                     <h2>{{img.title}}</h2>
                     <p>{{img.text}}</p>
@@ -26,7 +27,8 @@
             <div class="next" @click="incIndex()"></div>
             <!-- Thumb -->
             <div class="thumb" :class="{active: index === imageIndex}" v-for="(img,index) in images">
-                <img :src="img.image" :alt="img.image" @click="setIndex(index)">
+                <img :src="img.image" :alt="img.image" @mouseover="hoverPause()" @mouseleave="hoverPlay()"
+                    @click="setIndex(index)">
             </div>
         </div>
     </div>
