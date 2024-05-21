@@ -6,8 +6,6 @@
 
 const { createApp } = Vue;
 
-const { useInterval } = Vue;
-
 createApp({
     data() {
         return {
